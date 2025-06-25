@@ -41,9 +41,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown("<h1 style='text-align: center; color: red;'>Jarvis AI</h1>", unsafe_allow_html=True)
-
-
 # Initialize OpenAI client
 @st.cache_resource
 def init_openai_client():
@@ -170,7 +167,7 @@ for message in st.session_state.messages:
     if message["role"] == "user":
         chat_html += f"<div style='text-align: right; color: blue; margin-bottom: 10px;'><span style='color:orange'>You:</span> {message['content']}</div>"
     elif message["role"] == "assistant":
-        chat_html += f"<div style='text-align: left; color: green; margin-bottom: 10px;'><span style='color:red'>Jarvis:</span>  {message['content']}</div>"
+        chat_html += f"<div style='text-align: left; color: green; margin-bottom: 10px;'><span style='color:red'>AI:</span>  {message['content']}</div>"
 
 
 # Layout CSS
