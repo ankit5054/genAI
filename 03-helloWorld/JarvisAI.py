@@ -12,10 +12,14 @@ st.markdown(
     .viewerBadge_text__1JaDK {
         display: none;
     }
+    #GithubIcon {
+        visibility: hidden;
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 # Initialize OpenAI client
 @st.cache_resource
