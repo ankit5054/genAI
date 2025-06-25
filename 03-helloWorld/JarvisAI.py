@@ -15,6 +15,11 @@ st.markdown(
         .viewerBadge_text__1JaDK {
             display: none;
         }
+        
+        .stMain{
+            margin:0px;
+            padding:0px;
+        }
 
         #MainMenu {
             visibility: hidden;
@@ -26,6 +31,10 @@ st.markdown(
 
         header {
             visibility: hidden;
+        }
+        
+        *{
+            margin:0;
         }
     </style>
     """,
@@ -188,20 +197,22 @@ st.markdown(f"""
         border-radius: 10px;
         padding: 9px;
     }}
-
-    .form-container {{
-        height: 0vh;
-        display: flex;
-        align-items: center;
-    }}
     </style>
 
     <div class="chat-wrapper">
-        <div class="chat-container">
+        <div class="chat-container" id="chat-container">
             {chat_html}
         </div>
     </div>
+
+    <script>
+    const chatContainer = window.parent.document.querySelector('#chat-container');
+    if (chatContainer) {{
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }}
+    </script>
 """, unsafe_allow_html=True)
+
 
 # Input form area (15% height)
 with st.container():
