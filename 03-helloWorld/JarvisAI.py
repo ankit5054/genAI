@@ -15,6 +15,10 @@ st.markdown(
     #GithubIcon {
         visibility: hidden;
     }
+    #MainMenu {
+        visibility: hidden;
+    }
+
     </style>
     """,
     unsafe_allow_html=True
